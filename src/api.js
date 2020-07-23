@@ -1,7 +1,5 @@
-import Pokedex from "pokedex-promise-v2";
+import axios from "axios";
 
-const P = new Pokedex();
-
-P.getAbilityByName("stench")
-  .then((response) => console.log(response))
-  .catch((error) => console.log("error: ", error));
+export const fetchPokemon = async (id) => {
+  await axios(`https://pokeapi.co/api/v2/pokemon/${id}`);
+};
