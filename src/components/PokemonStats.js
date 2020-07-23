@@ -1,14 +1,10 @@
 import React from "react";
 
-const PokemonStats = (props) => {
+const PokemonStats = ({ pokemon }) => {
+  console.log("pokemon: ", pokemon);
   return (
     <section className="pokestat-container">
-      {/* todo: map through unordered list & display name, height, weight */}
-      <ul>
-        <li>Name:</li>
-        <li>Height:</li>
-        <li>Weight:</li>
-      </ul>
+      <div>{pokemon.name}</div>
     </section>
   );
 };
