@@ -1,12 +1,16 @@
 import React from "react";
+import { convertHeight, convertWeight } from "../helpers/converters";
+import capitalize from "../helpers/stringFormatter";
 
-const PokemonStats = ({ pokemon }) => {
-  console.log("pokemon: ", pokemon);
+export default function PokemonStats({ pokemon }) {
   return (
-    <section className="pokestat-container">
-      <div>{pokemon.name}</div>
-    </section>
+    <div className="stats-container">
+      <h1># {pokemon.id}</h1>
+      <ul>
+        <li>Name: {capitalize(pokemon.name)}</li>
+        <li>Height: {convertHeight(pokemon.height)} m</li>
+        <li>Weight: {convertWeight(pokemon.weight)} kg</li>
+      </ul>
+    </div>
   );
-};
-
-export default PokemonStats;
+}
