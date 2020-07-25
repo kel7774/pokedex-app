@@ -8,16 +8,12 @@ import Pagination from "./components/Pagination";
 function App() {
   const [loading, setLoading] = useState(true);
   const [pokeData, setPokeData] = useState([]);
-  const [pokemon, setPokemon] = useState(1);
-
-  useEffect(() => {
-    getPokemon();
-  }, [pokemon]);
+  const [pokeId, setPokeId] = useState(1);
 
   const getPokemon = async () => {
     setLoading(true);
     try {
-      const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
+      const url = `https://pokeapi.co/api/v2/pokemon/${pokeId}`;
       const response = await axios.get(url);
       setPokeData(response.data);
       setLoading(false);
@@ -26,12 +22,23 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    if (pokeId < 1) {
+      setPokeId(1);
+    }
+    getPokemon();
+  }, [pokeId]);
+
   function gotoNextPage() {
-    setPokemon(pokemon + 1);
+    setPokeId(pokeId + 1);
   }
 
   function gotoPrevPage() {
-    return setPokemon(pokemon - 1);
+    if (pokeId === 1) {
+      return;
+    } else {
+      setPokeId(pokeId - 1);
+    }
   }
 
   if (loading) return "Loading...";
