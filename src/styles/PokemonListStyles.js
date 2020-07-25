@@ -9,10 +9,6 @@ const Styles = styled.section`
     background-color: #41cae6;
     width: 15%;
   }
-  ul {
-    list-style-type: none;
-    padding-left: 0;
-  }
 `;
 
 export default Styles;

@@ -8,12 +8,7 @@ import Pagination from "./components/Pagination";
 function App() {
   const [loading, setLoading] = useState(true);
   const [pokeData, setPokeData] = useState([]);
-  const [pokemon, setPokemon] = useState("pikachu");
-  const [currentPageUrl, setCurrentPageUrl] = useState(
-    `https://pokeapi.co/api/v2/pokemon/${pokemon}`
-  );
-  const [nextPageUrl, setNextPageUrl] = useState();
-  const [prevPageUrl, setPrevPageUrl] = useState();
+  const [pokemon, setPokemon] = useState(1);
 
   useEffect(() => {
     getPokemon();
@@ -26,18 +21,17 @@ function App() {
       const response = await axios.get(url);
       setPokeData(response.data);
       setLoading(false);
-      console.log("response", response.data);
     } catch (error) {
-      console.log(error);
+      console.log("error: ", error);
     }
   };
 
   function gotoNextPage() {
-    setCurrentPageUrl(nextPageUrl);
+    setPokemon(pokemon + 1);
   }
 
   function gotoPrevPage() {
-    setCurrentPageUrl(prevPageUrl);
+    return setPokemon(pokemon - 1);
   }
 
   if (loading) return "Loading...";
@@ -46,11 +40,8 @@ function App() {
       <header className="App-header">Pokedex - Gotta Catch 'em All!</header>
       <main>
         <PokemonList pokemon={pokeData} />
+        <Pagination gotoNextPage={gotoNextPage} gotoPrevPage={gotoPrevPage} />
         <PokeStats pokemon={pokeData} />
-        <Pagination
-          gotoNextPage={nextPageUrl ? gotoNextPage : null}
-          gotoPrevPage={prevPageUrl ? gotoPrevPage : null}
-        />
       </main>
     </div>
   );

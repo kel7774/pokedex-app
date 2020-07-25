@@ -1,10 +1,11 @@
 import React from "react";
+import { Styles } from "../styles/PaginationStyles";
 
 export default function Pagination({ gotoNextPage, gotoPrevPage }) {
   return (
-    <div>
+    <Styles className="button-container">
       <button onClick={gotoPrevPage}>Previous</button>
       <button onClick={gotoNextPage}>Next</button>
-    </div>
+    </Styles>
   );
 }
