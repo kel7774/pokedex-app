@@ -8,6 +8,7 @@ export const Styles = styled.section`
   width: 25rem;
   h1 {
     font-size: 2rem;
+    text-align: center;
   }
   .list-item-container {
     display: flex;

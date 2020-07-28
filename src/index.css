@@ -20,17 +20,6 @@ main {
   margin: 0 auto;
 }
 
-footer,
-footer a {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-end;
-  margin: 0 0.5rem;
-  height: 3rem;
-  color: white;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

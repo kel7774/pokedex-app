@@ -3,6 +3,7 @@ import axios from "axios";
 import PokemonImage from "./components/PokemonImage";
 import PokeStats from "./components/PokemonStats";
 import Pagination from "./components/Pagination";
+import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
@@ -50,26 +51,7 @@ function App() {
         <Pagination gotoNextPage={gotoNextPage} gotoPrevPage={gotoPrevPage} />
         <PokeStats pokemon={pokeData} />
       </main>
-      <footer>
-        Icons made by{" "}
-        <a
-          href="https://www.flaticon.com/authors/freepik"
-          rel="noopener noreferrer"
-          target="_blank"
-          title="Freepik"
-        >
-          Freepik
-        </a>{" "}
-        from{" "}
-        <a
-          href="https://www.flaticon.com/"
-          rel="noopener noreferrer"
-          target="_blank"
-          title="Flaticon"
-        >
-          www.flaticon.com
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }
