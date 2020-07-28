@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Search from "./components/Search";
 import PokemonImage from "./components/PokemonImage";
-import PokeStats from "./components/PokemonStats";
 import Pagination from "./components/Pagination";
+import PokeStats from "./components/PokemonStats";
 import Footer from "./components/Footer";
 import "./App.css";
 
@@ -46,6 +47,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">Pokedex - Gotta Catch 'em All!</header>
+      <Search />
       <main>
         <PokemonImage pokemon={pokeData} />
         <Pagination gotoNextPage={gotoNextPage} gotoPrevPage={gotoPrevPage} />
