@@ -7,7 +7,6 @@ const Styles = styled.section`
   justify-content: center;
   .image-container {
     background-color: #41cae6;
-    width: 15%;
   }
 `;
 

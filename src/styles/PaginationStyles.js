@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
 export const Styles = styled.div`
-  padding: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  button {
+    margin: 1.5rem;
+    height: 150px;
+    width: 150px;
+    background: transparent;
+    border: 0px;
+  }
 `;

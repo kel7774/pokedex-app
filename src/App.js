@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./App.css";
-import PokemonList from "./components/PokemonList";
+import PokemonImage from "./components/PokemonImage";
 import PokeStats from "./components/PokemonStats";
 import Pagination from "./components/Pagination";
+import Footer from "./components/Footer";
+import "./App.css";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -46,10 +47,11 @@ function App() {
     <div className="App">
       <header className="App-header">Pokedex - Gotta Catch 'em All!</header>
       <main>
-        <PokemonList pokemon={pokeData} />
+        <PokemonImage pokemon={pokeData} />
         <Pagination gotoNextPage={gotoNextPage} gotoPrevPage={gotoPrevPage} />
         <PokeStats pokemon={pokeData} />
       </main>
+      <Footer />
     </div>
   );
 }
