@@ -5,13 +5,20 @@ import { Styles } from "../styles/PokemonStatStyles";
 
 export default function PokemonStats({ pokemon }) {
   return (
-    <Styles>
+    <Styles className="stats-container">
       <h1># {pokemon.id}</h1>
-      <ul>
-        <li>Name: {capitalize(pokemon.name)}</li>
-        <li>Height: {convertHeight(pokemon.height)} m</li>
-        <li>Weight: {convertWeight(pokemon.weight)} kg</li>
-      </ul>
+      <div className="list-item-container">
+        <strong>Name: </strong>
+        <div className="stat">{capitalize(pokemon.name)}</div>
+      </div>
+      <div className="list-item-container">
+        <strong>Height: </strong>
+        <div className="stat">{convertHeight(pokemon.height)} m</div>
+      </div>
+      <div className="list-item-container">
+        <strong>Weight: </strong>
+        <div className="stat">{convertWeight(pokemon.weight)} kg</div>
+      </div>
     </Styles>
   );
 }

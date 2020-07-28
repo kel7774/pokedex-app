@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./App.css";
-import PokemonList from "./components/PokemonList";
+import PokemonImage from "./components/PokemonImage";
 import PokeStats from "./components/PokemonStats";
 import Pagination from "./components/Pagination";
+import "./App.css";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -46,10 +46,30 @@ function App() {
     <div className="App">
       <header className="App-header">Pokedex - Gotta Catch 'em All!</header>
       <main>
-        <PokemonList pokemon={pokeData} />
+        <PokemonImage pokemon={pokeData} />
         <Pagination gotoNextPage={gotoNextPage} gotoPrevPage={gotoPrevPage} />
         <PokeStats pokemon={pokeData} />
       </main>
+      <footer>
+        Icons made by{" "}
+        <a
+          href="https://www.flaticon.com/authors/freepik"
+          rel="noopener noreferrer"
+          target="_blank"
+          title="Freepik"
+        >
+          Freepik
+        </a>{" "}
+        from{" "}
+        <a
+          href="https://www.flaticon.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+          title="Flaticon"
+        >
+          www.flaticon.com
+        </a>
+      </footer>
     </div>
   );
 }
