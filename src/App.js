@@ -47,12 +47,18 @@ function App() {
     }
   }
 
+  const handleStateChange = (value) => {
+    let newPokeId = pokeId;
+    let newValue = newPokeId.push(value);
+    setPokeId(newValue);
+  };
+
   if (loading) return "Loading...";
   return (
     <>
       <div className="App">
         <header className="App-header">Pokedex - Gotta Catch 'em All!</header>
-        <Search />
+        <Search handleStateChange={handleStateChange} />
         <main>
           <PokemonImage pokemon={pokeData} />
           <Pagination gotoNextPage={gotoNextPage} gotoPrevPage={gotoPrevPage} />

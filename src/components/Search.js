@@ -4,7 +4,7 @@ import Fuse from "fuse.js";
 import capitalize, { formatURL } from "../helpers/stringFormatter";
 import Styles from "../styles/SearchStyles";
 
-export default function Search({ onSelect }) {
+export default function Search({ handleStateChange }) {
   const P = new PokeDex();
   const [pokemon, setPokemon] = useState([]);
   const [query, updateQuery] = useState("");
@@ -49,8 +49,6 @@ export default function Search({ onSelect }) {
     setResults(foundArray);
   };
 
-  const handleClick = (pokemon) => {};
-
   return (
     <Styles>
       <input
@@ -70,6 +68,7 @@ export default function Search({ onSelect }) {
                 className="results-map"
                 onClick={() => {
                   console.log("id", formatURL(p.url));
+                  handleStateChange(formatURL(p.url));
                 }}
               >
                 <p>
