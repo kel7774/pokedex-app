@@ -12,6 +12,7 @@ function App() {
   const [pokeData, setPokeData] = useState([]);
   const [pokeId, setPokeId] = useState(25);
 
+  // grabs pokemon by id for injection into useEffect
   const getPokemon = async () => {
     setLoading(true);
     try {
@@ -24,6 +25,7 @@ function App() {
     }
   };
 
+  // displays & re-renders new pokemon based on id onto ui
   useEffect(() => {
     if (pokeId < 1) {
       setPokeId(1);
@@ -31,10 +33,12 @@ function App() {
     getPokemon();
   }, [pokeId]);
 
+  // navigates to next pokemon by clicking right arrow
   function gotoNextPage() {
     setPokeId(pokeId + 1);
   }
 
+  // navigates to previous pokemon only if id >=1 by clicking left arrow
   function gotoPrevPage() {
     if (pokeId === 1) {
       return;
@@ -43,12 +47,16 @@ function App() {
     }
   }
 
+  const handleStateChange = (value) => {
+    setPokeId(value);
+  };
+
   if (loading) return "Loading...";
   return (
     <>
       <div className="App">
         <header className="App-header">Pokedex - Gotta Catch 'em All!</header>
-        <Search />
+        <Search handleStateChange={handleStateChange} />
         <main>
           <PokemonImage pokemon={pokeData} />
           <Pagination gotoNextPage={gotoNextPage} gotoPrevPage={gotoPrevPage} />
