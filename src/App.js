@@ -10,7 +10,7 @@ import "./App.css";
 function App() {
   const [loading, setLoading] = useState(true);
   const [pokeData, setPokeData] = useState([]);
-  const [pokeId, setPokeId] = useState(1);
+  const [pokeId, setPokeId] = useState(25);
 
   const getPokemon = async () => {
     setLoading(true);
@@ -45,16 +45,18 @@ function App() {
 
   if (loading) return "Loading...";
   return (
-    <div className="App">
-      <header className="App-header">Pokedex - Gotta Catch 'em All!</header>
-      <Search />
-      <main>
-        <PokemonImage pokemon={pokeData} />
-        <Pagination gotoNextPage={gotoNextPage} gotoPrevPage={gotoPrevPage} />
-        <PokeStats pokemon={pokeData} />
-      </main>
+    <>
+      <div className="App">
+        <header className="App-header">Pokedex - Gotta Catch 'em All!</header>
+        <Search />
+        <main>
+          <PokemonImage pokemon={pokeData} />
+          <Pagination gotoNextPage={gotoNextPage} gotoPrevPage={gotoPrevPage} />
+          <PokeStats pokemon={pokeData} />
+        </main>
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }
 
