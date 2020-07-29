@@ -48,9 +48,7 @@ function App() {
   }
 
   const handleStateChange = (value) => {
-    let newPokeId = pokeId;
-    let newValue = newPokeId.push(value);
-    setPokeId(newValue);
+    setPokeId(value);
   };
 
   if (loading) return "Loading...";

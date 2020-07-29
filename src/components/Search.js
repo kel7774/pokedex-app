@@ -67,7 +67,6 @@ export default function Search({ handleStateChange }) {
                 key={formatURL(p.url)}
                 className="results-map"
                 onClick={() => {
-                  console.log("id", formatURL(p.url));
                   handleStateChange(formatURL(p.url));
                 }}
               >
