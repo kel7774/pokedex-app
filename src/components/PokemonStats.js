@@ -12,12 +12,12 @@ export default function PokemonStats({ pokemon }) {
         <div className="stat">{capitalize(pokemon.name)}</div>
       </div>
       <div className="list-item-container">
-        <strong>Height: </strong>
-        <div className="stat">{convertHeight(pokemon.height)} m</div>
-      </div>
-      <div className="list-item-container">
         <strong>Weight: </strong>
         <div className="stat">{convertWeight(pokemon.weight)} kg</div>
+      </div>
+      <div className="list-item-container">
+        <strong>Height: </strong>
+        <div className="stat">{convertHeight(pokemon.height)} m</div>
       </div>
     </Styles>
   );
