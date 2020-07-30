@@ -1,14 +1,16 @@
 import React from "react";
+import LeftArrow from "../assets/icons/LeftArrow";
+import RightArrow from "../assets/icons/RightArrow";
 import { Styles } from "../styles/PaginationStyles";
 
 export default function Pagination({ gotoNextPage, gotoPrevPage }) {
   return (
     <Styles className="button-container">
       <button onClick={gotoPrevPage}>
-        <img src={require("../assets/icons/LeftArrow.svg")} alt="Previous" />
+        <LeftArrow />
       </button>
       <button onClick={gotoNextPage}>
-        <img src={require("../assets/icons/RightArrow.svg")} alt="Next" />
+        <RightArrow />
       </button>
     </Styles>
   );

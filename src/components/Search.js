@@ -53,7 +53,7 @@ export default function Search({ handleStateChange }) {
     <Styles>
       <div className="input-container">
         <img
-          src={require("../assets/icons/Search.svg")}
+          src={require("../assets/icons/SearchIcon.png")}
           alt="Search Icon"
           className="icon"
         />
