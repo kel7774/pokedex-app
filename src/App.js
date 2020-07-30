@@ -5,6 +5,7 @@ import PokemonImage from "./components/PokemonImage";
 import Pagination from "./components/Pagination";
 import PokeStats from "./components/PokemonStats";
 import Footer from "./components/Footer";
+import { formatURL } from "./helpers/stringFormatter";
 import "./App.css";
 
 function App() {
@@ -47,8 +48,10 @@ function App() {
     }
   }
 
+  // changes pokeId in Search component which re-renders App view
   const handleStateChange = (value) => {
-    setPokeId(value);
+    const newValue = formatURL(value);
+    setPokeId(newValue);
   };
 
   if (loading) return "Loading...";

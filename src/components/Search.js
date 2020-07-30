@@ -32,7 +32,7 @@ export default function Search({ handleStateChange }) {
     includeScore: true,
     includeMatches: true,
     minMatchCharLength: 2,
-    threshold: 0.1,
+    threshold: 0.6,
   });
 
   // updates value as user types within input
@@ -51,31 +51,36 @@ export default function Search({ handleStateChange }) {
 
   return (
     <Styles>
-      <input
-        type="text"
-        placeholder="Search Pokedex ..."
-        className="search-input"
-        value={query}
-        onChange={onSearch}
-        onKeyDown={handleEnter}
-      />
-      <img src={require("../assets/icons/Search.svg")} alt="Search Icon" />
+      <div className="input-container">
+        <img
+          src={require("../assets/icons/Search.svg")}
+          alt="Search Icon"
+          className="icon"
+        />
+        <input
+          type="text"
+          placeholder="Search Pokedex ..."
+          className="search-input"
+          value={query}
+          onChange={onSearch}
+          onKeyDown={handleEnter}
+        />
+      </div>
       <div className="container">
-        {results
-          ? results.map((p) => (
-              <div
-                key={formatURL(p.url)}
-                className="results-map"
-                onClick={() => {
-                  handleStateChange(formatURL(p.url));
-                }}
-              >
-                <p>
-                  {capitalize(p.name)} - {formatURL(p.url)}
-                </p>
-              </div>
-            ))
-          : null}
+        {results &&
+          results.map((p) => (
+            <div
+              key={formatURL(p.url)}
+              className="results-map"
+              onClick={() => {
+                if (typeof handleStateChange === "function") {
+                  handleStateChange(p.url);
+                }
+              }}
+            >
+              <p>{capitalize(p.name)}</p>
+            </div>
+          ))}
       </div>
     </Styles>
   );
