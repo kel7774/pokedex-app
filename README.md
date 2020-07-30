@@ -4,6 +4,10 @@
 
 The Pokedex is a React application that displays basic information about Pokemon from the [PokeApi](https://pokeapi.co/) with search powered by [Fuse.js](https://fusejs.io/).
 
+# Try it out!
+
+[CodeSandBox](https://codesandbox.io/s/kelli-landrys-pokedex-fpzcp)
+
 # Installation
 
 Clone the Repo:
