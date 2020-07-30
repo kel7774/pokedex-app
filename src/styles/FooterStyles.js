@@ -3,8 +3,7 @@ import styled from "styled-components";
 const Styles = styled.footer`
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: space-between;
   margin: 0 0.5rem;
   height: 3rem;
   color: white;
