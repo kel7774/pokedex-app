@@ -7,6 +7,7 @@ const Styles = styled.section`
   justify-content: center;
   .image-container {
     background-color: #41cae6;
+    border-radius: 0.8rem;
   }
 `;
 

@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Styles = styled.section`
   color: black;
   background-color: #e5593f;
+  border-radius: 0.8rem;
   margin: 0 auto;
   height: 15rem;
   width: 25rem;
